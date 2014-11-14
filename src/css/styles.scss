@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+@import "../bower_components/foundation/scss/foundation";
+// @import "../bower_components/bourbon/dist/bourbon";
+
+$mublack : rgba(2,2,2, 1);
+$white : rgba(255,255,255, 0.25);
+// @include font-face(lato-light, './fonts/lato-light-webfont', normal);
+body {
+	background-image: url('/images/graphyo.png');
+	background-position: top left;
+}
+header {
+  padding-top: 0.5rem;
+  h4  {
+    font-size: 0.7rem;
+    font-weight: lighter;
+    letter-spacing: 0.1rem;
+    top:8.5em;
+    right: 8em;
+  }
+  img {
+    min-width: 100%;
+  }
+  blockquote {
+
+    p{
+      font-size: 0.85rem;
+    }
+  }
+}
+.clearing {
+
+	img {
+		opacity: 50%;
+	}
+}
+.clearing-blackout, .clearing-container {
+  background-color:lighten($mublack, 5%);
+}
+@each $member in android, angular, app, bootstrap, bourbon, bitters, bower, cc, chef, compass, cordova, git, github, grunt, gulp, html5, inuit, ionic, jekyll, laravel, neat, puppet, sketch, vagrant, wp, yeoman, zurb {
+  .#{$member}_logo {
+    background-image: url("/images/sk/#{$member}_logo.png");
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    height: 84px;
+    width: 84px;
+  }
+}
+.head_title {
+  display: block;
+  position: relative;
+  bottom: 7em;
+  left: 5em;
+  -webkit-transform: rotate(90deg);  /* Saf3.1+, Chrome */
+  -moz-transform: rotate(90deg);  /* FF3.5+ */
+  -ms-transform: rotate(90deg);  /* IE9 */
+  -o-transform: rotate(90deg);  /* Opera 10.5 */
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(/* IE6–IE9 */
+    M11=6.123233995736766e-17, M12=-1, M21=1, M22=6.123233995736766e-17, sizingMethod='auto expand');
+  zoom: 1;
+  margin: 0;
+  a{
+    display: inline-block;
+  }
+  h1 {
+    display: inline-block;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.05rem;
+    font-weight: lighter;
+    // top:2.7em;
+    // right: 2em;
+  }
+}
+.subheader {
+  letter-spacing: 0.25rem;
+}
+.mudef {
+  font-size: 0.8rem;
+  margin: 12% 0;
+  padding: 0;
+  h2 {
+    font-size: 1.15em;
+    letter-spacing: 0.2em;
+    word-spacing: 0.1em;
+    padding:0.2em 0 0 1.3em;
+    margin: 0;
+  }
+  p {
+    font-weight: lighter;
+    word-spacing: 0.2em;
+    line-height: 1.2em;
+    margin:0;
+    padding:0;
+  }
+}
+.tekrol {
+
+  li {
+    float: left;
+    overflow: hidden;
+    padding: 1em 0.5em;
+    position: relative;
+    perspective: 1000px;
+  }
+  a {
+    display: block;
+    /*3d space for children*/
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    -moz-background-size: cover;
+    background-size: cover;
+    // @include filter(grayscale (.5) opacity(0.8) hue-rotate(120deg));
+    &:hover {
+      transform: rotateX(80deg);
+      transform-origin: bottom;
+      opacity: 0.6;
+    }
+    &:before {
+      opacity: 1;
+      /*blurred effect using box shadow as filter: blur is not supported in all browsers*/
+      box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.5);
+      /*pushing the shadow down and scaling it down to size*/
+      transform: rotateX(0) translateZ(-60px) scale(0.85);
+    }
+  }
+  span {
+    color: darken($mublack, 5%);
+    text-transform: uppercase;
+    position: absolute;
+    max-width: 100%;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 0.6rem;
+    text-align: center;
+    /*the rotation is a bit less than the bottom surface to avoid flickering*/
+    transform: rotateX(-89.999deg); transform-origin: top;
+    z-index: 1;
+  }
+}
+.top-bar {
+  background-color: $mublack;
+}
+.accordion dd > a {
+  font-family: lato;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  letter-spacing: 0.15rem;
+  background-color: $mublack;
+  &:hover {
+    background-color: lighten($mublack, 12%);
+    transition: 0.75s all linear;
+    color: darken($white, 5%);
+  }
+}
+#panel2 {
+  background-color: none;
+}
+figure.effect-layla {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  display: inline-block;
+  text-align: center;
+  width: 33.3%;
+  background: #18a367;
+  h2 {
+    padding-top: 26%;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+  }
+  p {
+    padding: 0.5em 2em;
+    text-transform: none;
+    opacity: 0;
+    -webkit-transform: translate3d(0,-10px,0);
+    transform: translate3d(0,-10px,0);
+  }
+  img {
+    min-width: 100%;
+    height: -webkit-calc(100% + 40px);
+    height: calc(100% + 40px);
+  }
+  figcaption {
+    padding: 3em;
+  }
+}
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+}
+
+figure.effect-layla figcaption::before {
+  top: 50px;
+  right: 30px;
+  bottom: 50px;
+  left: 30px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+figure.effect-layla figcaption::after {
+  top: 30px;
+  right: 50px;
+  bottom: 30px;
+  left: 50px;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+figure.effect-layla
+
+figure.effect-layla img,
+figure.effect-layla h2 {
+  -webkit-transform: translate3d(0,-30px,0);
+  transform: translate3d(0,-30px,0);
+}
+
+figure.effect-layla img,
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after,
+figure.effect-layla p {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-layla:hover img {
+  opacity: 0.7;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-layla:hover figcaption::before,
+figure.effect-layla:hover figcaption::after {
+  opacity: 1;
+  -webkit-transform: scale(0.5);
+  transform: scale(1);
+}
+
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover img {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.override .mailto.ninja footer nav.toolbar { background-color: #CCC; }
