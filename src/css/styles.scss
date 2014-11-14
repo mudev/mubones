@@ -40,7 +40,7 @@ header {
 }
 @each $member in android, angular, app, bootstrap, bourbon, bitters, bower, cc, chef, compass, cordova, git, github, grunt, gulp, html5, inuit, ionic, jekyll, laravel, neat, puppet, sketch, vagrant, wp, yeoman, zurb {
   .#{$member}_logo {
-    background-image: url("/images/sk/#{$member}_logo.png");
+    background-image: url("../images/sk/#{$member}_logo.png");
     display: block;
     max-width: 100%;
     max-height: 100%;
