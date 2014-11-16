@@ -1,17 +1,19 @@
 @charset "UTF-8";
 
 @import "../bower_components/foundation/scss/foundation";
-// @import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/bourbon/dist/bourbon";
 
 $mublack : rgba(2,2,2, 1);
 $white : rgba(255,255,255, 1);
+$blaze : rgba(253,81,27, 1);
 // @include font-face(lato-light, './fonts/lato-light-webfont', normal);
 body {
-	background-image: url('/images/graphyo.png');
+  height: auto;
+  background-image: url('../images/graphyo.png');
 	background-position: top left;
 }
 header {
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
   h4  {
     font-size: 0.7rem;
     font-weight: lighter;
@@ -20,7 +22,7 @@ header {
     right: 8em;
   }
   img {
-    min-width: 100%;
+    // min-width: 100%;
   }
   blockquote {
 
@@ -52,10 +54,10 @@ header {
   }
 }
 .head_title {
-  display: block;
+  display: inline-block;
   position: relative;
   bottom: 7em;
-  left: 5em;
+  left: 6em;
   -webkit-transform: rotate(90deg);  /* Saf3.1+, Chrome */
   -moz-transform: rotate(90deg);  /* FF3.5+ */
   -ms-transform: rotate(90deg);  /* IE9 */
@@ -113,7 +115,8 @@ header {
     display: block;
     /*3d space for children*/
     transform-style: preserve-3d;
-    transition: all 0.75s ease-in;
+    // transition: all 0.5s ease-in;
+    @include transition(all 0.5s $ease-in-out-expo);
     -moz-background-size: cover;
     background-size: cover;
     //centre in li
@@ -148,16 +151,17 @@ header {
   }
 }
 .linkinfo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   font-family: lato;
   font-weight: lighter;
-  transition: all 0.75s ease-out;
-  background-color: lighten($mublack, 50%);
+  transition: all 0.85s ease-out;
   display: inline-block;
   width: 100%;
   margin: 0 auto;
   padding-left: 40%;
   font-size: 1.05em;
-  color: white;
   div {
     padding: 2% 0;
     display: none;
@@ -183,109 +187,13 @@ header {
 #panel2 {
   background-color: none;
 }
-figure.effect-layla {
-  position: relative;
-  overflow: hidden;
-  height: 400px;
-  display: inline-block;
-  text-align: center;
-  width: 33.3%;
-  background: #18a367;
-  h2 {
-    padding-top: 26%;
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
+#footer {
+  background-color: $blaze;
+  display: table;
+  width: 100%;
+  a {
+    background-color: $blaze;
+    margin: 0;
   }
-  p {
-    padding: 0.5em 2em;
-    text-transform: none;
-    opacity: 0;
-    -webkit-transform: translate3d(0,-10px,0);
-    transform: translate3d(0,-10px,0);
-  }
-  img {
-    min-width: 100%;
-    height: -webkit-calc(100% + 40px);
-    height: calc(100% + 40px);
-  }
-  figcaption {
-    padding: 3em;
-  }
-}
-figure.effect-layla figcaption::before,
-figure.effect-layla figcaption::after {
-  position: absolute;
-  content: '';
-  opacity: 0;
-}
-
-figure.effect-layla figcaption::before {
-  top: 50px;
-  right: 30px;
-  bottom: 50px;
-  left: 30px;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: scale(0,1);
-  transform: scale(0,1);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-
-figure.effect-layla figcaption::after {
-  top: 30px;
-  right: 50px;
-  bottom: 30px;
-  left: 50px;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
-  -webkit-transform: scale(1,0);
-  transform: scale(1,0);
-  -webkit-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-}
-
-figure.effect-layla
-
-figure.effect-layla img,
-figure.effect-layla h2 {
-  -webkit-transform: translate3d(0,-30px,0);
-  transform: translate3d(0,-30px,0);
-}
-
-figure.effect-layla img,
-figure.effect-layla figcaption::before,
-figure.effect-layla figcaption::after,
-figure.effect-layla p {
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-}
-
-figure.effect-layla:hover img {
-  opacity: 0.7;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-figure.effect-layla:hover figcaption::before,
-figure.effect-layla:hover figcaption::after {
-  opacity: 1;
-  -webkit-transform: scale(0.5);
-  transform: scale(1);
-}
-
-figure.effect-layla:hover h2,
-figure.effect-layla:hover p {
-  opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-figure.effect-layla:hover figcaption::after,
-figure.effect-layla:hover h2,
-figure.effect-layla:hover p,
-figure.effect-layla:hover img {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
 }
 .override .mailto.ninja footer nav.toolbar { background-color: #CCC; }
