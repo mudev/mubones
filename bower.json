@@ -2,10 +2,12 @@
   "name": "mustatic",
   "version": "0.0.0",
   "dependencies": {
-  	"foundation": ">=5.0.2",
-    "bourbon" : "4.0.2",
+    "foundation": ">=5.0.2",
+    "bourbon": "4.0.2",
     "modernizr": "~2.6.2",
     "jquery": "~1.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "isotope": "~2.0.1"
+  }
 }

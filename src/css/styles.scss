@@ -4,7 +4,7 @@
 // @import "../bower_components/bourbon/dist/bourbon";
 
 $mublack : rgba(2,2,2, 1);
-$white : rgba(255,255,255, 0.25);
+$white : rgba(255,255,255, 1);
 // @include font-face(lato-light, './fonts/lato-light-webfont', normal);
 body {
 	background-image: url('/images/graphyo.png');
@@ -25,7 +25,7 @@ header {
   blockquote {
 
     p{
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
   }
 }
@@ -37,6 +37,9 @@ header {
 }
 .clearing-blackout, .clearing-container {
   background-color:lighten($mublack, 5%);
+}
+.clearing-caption {
+  font-size: 1.5em;
 }
 @each $member in android, angular, app, bootstrap, bourbon, bitters, bower, cc, chef, compass, cordova, git, github, grunt, gulp, html5, inuit, ionic, jekyll, laravel, neat, puppet, sketch, vagrant, wp, yeoman, zurb {
   .#{$member}_logo {
@@ -110,9 +113,11 @@ header {
     display: block;
     /*3d space for children*/
     transform-style: preserve-3d;
-    transition: all 0.5s;
+    transition: all 0.75s ease-in;
     -moz-background-size: cover;
     background-size: cover;
+    //centre in li
+    margin: 0 auto;
     // @include filter(grayscale (.5) opacity(0.8) hue-rotate(120deg));
     &:hover {
       transform: rotateX(80deg);
@@ -142,19 +147,37 @@ header {
     z-index: 1;
   }
 }
+.linkinfo {
+  font-family: lato;
+  font-weight: lighter;
+  transition: all 0.75s ease-out;
+  background-color: lighten($mublack, 50%);
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 40%;
+  font-size: 1.05em;
+  color: white;
+  div {
+    padding: 2% 0;
+    display: none;
+    // position: absolute;
+  }
+}
 .top-bar {
   background-color: $mublack;
 }
-.accordion dd > a {
+.accordion .accordion-navigation > a, .accordion dd > a {
   font-family: lato;
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: lighter;
   letter-spacing: 0.15rem;
-  background-color: $mublack;
+  background-color: lighten($mublack, 70%);
+  color: $mublack;
   &:hover {
-    background-color: lighten($mublack, 12%);
-    transition: 0.75s all linear;
-    color: darken($white, 5%);
+    background-color: $mublack;
+    transition: 0.65s all linear;
+    color: white;
   }
 }
 #panel2 {
