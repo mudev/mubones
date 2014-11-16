@@ -1,0 +1,1 @@
+$(".tekrol li").hover(function(){var a=$(this).index();$(".linkinfo div:eq("+a+")").fadeToggle()},function(){$(".linkinfo div").hide()});
