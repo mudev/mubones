@@ -1,4 +1,10 @@
 $(document).foundation();
+
+
+/* vivus call */
+
+var hi = new Vivus('musvg', {type: 'oneByOne', start: 'manual', duration: 200, selfDestroy:'true'});
+
 /*!
  * jQuery Sticky Footer 1.1
  * Corey Snyder
@@ -15,10 +21,10 @@ $(document).foundation();
 
 window.onload = function() {
     stickyFooter();
-
     //you can either uncomment and allow the setInterval to auto correct the footer
     //or call stickyFooter() if you have major DOM changes
     //setInterval(checkForDOMChange, 1000);
+    hi.play();
 };
 
 //check for changes to the DOM
@@ -40,13 +46,12 @@ function getCSS(element, property) {
   if (elem.currentStyle) {
     css = elem.currentStyle[property];
 
-  } else if (window.getComputedStyle) {
+  }
+  else if (window.getComputedStyle) {
     css = document.defaultView.getComputedStyle(elem, null).
     getPropertyValue(property);
   }
-
   return css;
-
 }
 
 function stickyFooter() {
@@ -60,7 +65,7 @@ function stickyFooter() {
         var current = getCSS("footer", "margin-top");
 
         if (isNaN(current) == true) {
-            document.getElementsByTagName("footer")[0].setAttribute("style","margin-top:0px;");
+            document.getElementsByTagName("footer")[0].setAttribute("style","margin-top:10px;");
             current = 0;
         } else {
             current = parseInt(current);

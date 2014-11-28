@@ -103,7 +103,9 @@ header {
   }
 }
 .tekrol {
-
+  background-color: none;
+  display: inline-block;
+  min-height: 100%;
   li {
     float: left;
     overflow: hidden;
@@ -184,10 +186,58 @@ header {
     color: white;
   }
 }
-#panel2 {
-  background-color: none;
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  display: inline-block;
+}
+// #panel2 {
+//   background-color: none;
+//   display: block;
+//   min-height: 100%;
+// }
+.button-group{
+  position: absolute;
+  right:0;
+  bottom: 0;
+  display: block;
+  float: right;
+}
+.btngroup {
+
+  li {
+    float: left;
+    overflow: hidden;
+    padding: 0;
+    margin-left: 1em;
+    position: relative;
+    perspective: none;
+  }
+  a {
+    display: block;
+    /*3d space for children*/
+    transform-style: flat;
+    // transition: all 0.5s ease-in;
+    @include transition(all 0.5s $ease-in-out-expo);
+    -moz-background-size: cover;
+    background-size: cover;
+    //centre in li
+    margin: 0 auto;
+    // @include filter(grayscale (.5) opacity(0.8) hue-rotate(120deg));
+    &:hover {
+      transform: 0;
+      transform-origin: bottom;
+      opacity: 0.6;
+    }
+    &:before {
+      opacity: 1;
+      /*blurred effect using box shadow as filter: blur is not supported in all browsers*/
+      box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.5);
+      /*pushing the shadow down and scaling it down to size*/
+      transform: 0;
+    }
+  }
 }
 #footer {
+  position: absolute;
   background-color: $blaze;
   display: table;
   width: 100%;

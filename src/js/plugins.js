@@ -4,3 +4,12 @@ $('.tekrol li').hover(function(){
 }, function() {
    $('.linkinfo div').hide();
 });
+
+// $('#panel2').isotope({
+//   // options...
+//   itemSelector: '.item',
+//   masonry: {
+//    layoutMode: 'fitRows'
+//   },
+//   containerStyle: null
+// });
