@@ -35,6 +35,7 @@ header {
 
 	img {
 		opacity: 50%;
+    width: 282px;
 	}
 }
 .clearing-blackout, .clearing-container {
@@ -67,6 +68,16 @@ header {
     M11=6.123233995736766e-17, M12=-1, M21=1, M22=6.123233995736766e-17, sizingMethod='auto expand');
   zoom: 1;
   margin: 0;
+  @media screen and (max-width: 600px) {
+    padding: 0 0.25rem;
+    -webkit-transform: rotate(0deg);  /* Saf3.1+, Chrome */
+  -moz-transform: rotate(0deg);  /* FF3.5+ */
+  -ms-transform: rotate(0deg);  /* IE9 */
+  -o-transform: rotate(0deg);  /* Opera 10.5 */
+  transform: rotate(0deg);
+  bottom: 0;
+  left: 0;
+  }
   a{
     display: inline-block;
   }
@@ -78,6 +89,9 @@ header {
     font-weight: lighter;
     // top:2.7em;
     // right: 2em;
+    @media screen and (max-width: 600px)  {
+      font-size: 1.2rem;
+    }
   }
 }
 .subheader {
@@ -190,9 +204,15 @@ header {
   display: inline-block;
 }
 // #panel2 {
+  //problems with foundation js - not implimented
 //   background-color: none;
-//   display: block;
-//   min-height: 100%;
+//   display: inline-block;
+//   // min-height: 100%;
+// }
+// #panel3 {
+//   background-color: none;
+//   display: inline-block;
+//   // min-height: 100%;
 // }
 .button-group{
   position: absolute;
@@ -236,6 +256,11 @@ header {
     }
   }
 }
+.carousel {
+  display: block;
+}
+
+
 #footer {
   position: absolute;
   background-color: $blaze;
